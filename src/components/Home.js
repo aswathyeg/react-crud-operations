@@ -1,7 +1,16 @@
 import React from "react";
 import Employee from "./Data";
 import { Button, Table } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
 const Home = () => {
+  let history = useNavigate();
+  const handleDelete = (id) => {
+    var index = Employee.map((e) => {
+      return e.id;
+    }).indexOf(id);
+    Employee.splice(index, 1); //delete
+    history("/");
+  };
   return (
     <div style={{ margin: "10rem" }}>
       <Table striped bordered size="sm">
@@ -23,13 +32,7 @@ const Home = () => {
                     <td>
                       <Button>Add</Button>
                       &nbsp;
-                      <Button
-                        onClick={(id) => {
-                          Employee.filter((items) => {
-                            return items.id !== Employee.id;
-                          });
-                        }}
-                      >
+                      <Button onClick={() => handleDelete(items.id)}>
                         Delete
                       </Button>
                       &nbsp;
