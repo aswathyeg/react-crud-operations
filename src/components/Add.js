@@ -9,6 +9,12 @@ const Add = () => {
   let history = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault(); //to hide all other events
+    const ids = uuid();
+    let uniqueId = ids.slice(0, 8);
+    let a = name;
+    let b = age;
+    Employee.push({ id: uniqueId, name: a, age: age });
+    history.push("/create");
   };
   return (
     <div>
