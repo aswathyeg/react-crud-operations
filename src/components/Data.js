@@ -1,17 +1,18 @@
-const employee = [
+const Employee = [
   {
     id: 1,
     name: "Ash",
-    Age: 18,
+    age: 18,
   },
   {
     id: 2,
     name: "John",
-    Age: 19,
+    age: 19,
   },
   {
     id: 3,
     name: "Mary",
-    Age: 20,
+    age: 20,
   },
 ];
+export default Employee;
