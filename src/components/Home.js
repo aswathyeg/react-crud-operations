@@ -36,7 +36,9 @@ const Home = () => {
                         Delete
                       </Button>
                       &nbsp;
-                      <Button>Edit</Button>
+                      <Link to="/edit">
+                        <Button>Edit</Button>
+                      </Link>
                       &nbsp;
                     </td>
                   </tr>
@@ -45,6 +47,10 @@ const Home = () => {
             : "no data"}
         </tbody>
       </Table>
+      <br></br>
+      <Link className="d-grid gap-2" to="/create">
+        <Button size="lg">Create</Button>
+      </Link>
     </div>
   );
 };
