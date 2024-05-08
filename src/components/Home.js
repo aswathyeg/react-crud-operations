@@ -11,6 +11,11 @@ const Home = () => {
     Employee.splice(index, 1); //delete
     history("/");
   };
+  const handleEdit = (id, name, age) => {
+    localStorage.setItem("Name", name);
+    localStorage.setItem("Age", age);
+    localStorage.setItem("Id", id);
+  };
   return (
     <div style={{ margin: "10rem" }}>
       <Table striped bordered size="sm">
@@ -27,8 +32,8 @@ const Home = () => {
                 return (
                   <tr>
                     <td>{items.id}</td>
-                    <td>{items.name}</td>
-                    <td>{items.age}</td>
+                    <td>{items.Name}</td>
+                    <td>{items.Age}</td>
                     <td>
                       <Button>Add</Button>
                       &nbsp;
@@ -37,7 +42,13 @@ const Home = () => {
                       </Button>
                       &nbsp;
                       <Link to="/edit">
-                        <Button>Edit</Button>
+                        <Button
+                          onClick={() =>
+                            handleEdit(items.id, items.Name, items.Age)
+                          }
+                        >
+                          Edit
+                        </Button>
                       </Link>
                       &nbsp;
                     </td>
