@@ -4,6 +4,7 @@ import { Button, Table } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 const Home = () => {
   let history = useNavigate();
+
   const handleDelete = (id) => {
     var index = Employee.map((e) => {
       return e.id;
